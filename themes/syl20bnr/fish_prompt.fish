@@ -65,9 +65,9 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
   set -l colbred   (set_color -o red)
   set -l colwhite  (set_color white)
   set -l colbwhite  (set_color -o white)
-  
+
   # Segments
-  
+
   # git
   # If inside a git repo then the pwd segment is replaced by the git
   # segment.
@@ -81,7 +81,7 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
   # The displayed information is:
   #   Unpushed commits are indicated with up arrows
   #   The number of unpushed commits is indicated right after the up arrows
-  # Note: 
+  # Note:
   #   Dirtiness is indicated by the color of the branch name, red is dirty,
   #   green is up-to-date.
   # If P = Z then P(C) is not displayed
@@ -134,7 +134,7 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
       set ps_pwd $ps_pwd$colnormal"("$depth")"
     end
   end
-      
+
   # vi mode
   # If vi_mode plugin or native vi mode is activated then print the vi mode
   # in the prompt.
@@ -142,7 +142,7 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
   if test -n "$vi_mode"
     set ps_vi $colnormal"["$vi_mode$colnormal"]"
   end
-  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings" 
+  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
     switch $fish_bind_mode
       case default
         set ps_vi $colnormal"("$colred"N"$colnormal")"
@@ -181,7 +181,7 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
     set ps_end $ps_end$ps_end
   end
   # last status give the color of the right arrows at the end of the prompt
-  if test $last_status -ne 0 
+  if test $last_status -ne 0
     set ps_end $colnormal$colbred$ps_end
   else
     set ps_end $colnormal$colgreen$ps_end
@@ -202,11 +202,11 @@ function fish_right_prompt -d "Write out the right prompt of the syl20bnr theme"
   #   X is the username
   #   Y is the hostname
   set -l ps_where $colnormal(whoami)@(hostname|cut -d . -f 1)
-  
+
   # Right Prompt
 
   if test $__syl20bnr_display_rprompt -eq 1
-    echo -n -s $ps_where
+    # echo -n -s $ps_where
   end
 end
 
