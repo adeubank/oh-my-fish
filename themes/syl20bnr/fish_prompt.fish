@@ -131,7 +131,7 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
       if test -n "$in_home"
         set depth (math $depth - 2)
       end
-      set ps_pwd $ps_pwd$colnormal"("$depth")"
+      set ps_pwd $ps_pwd$colnormal"("(echo $depth | xargs)")"
     end
   end
 
